@@ -64,20 +64,23 @@ public static class GenerateurTerrain
 
                 var vPosition = voisinHasard.Position;
                 terrain[current.X, current.Y] &= ~voisinHasard.MurPartage;
-                terrain[vPosition.X, vPosition.Y] &= ~GetOppositeWall(voisinHasard.MurPartage);
+                terrain[vPosition.X, vPosition.Y] &= ~TrouverMurOppose(voisinHasard.MurPartage);
                 terrain[vPosition.X, vPosition.Y] |= MurEtat.VISITE;
 
                 positionStack.Push(vPosition);
             }
         }
 
+        return terrain;
+    }
+
     private static List<Voisin> TrouverVoisinNonVisite(Position p, MurEtat[,] terrain, int width, int height)
     {
         var list = new List<Voisin>();
 
-        if(p.X > 0) // Gauche
+        if (p.X > 0) // Gauche
         {
-            if(!terrain[p.X - 1, p.Y].HasFlag(MurEtat.VISITE))
+            if (!terrain[p.X - 1, p.Y].HasFlag(MurEtat.VISITE))
             {
                 list.Add(new Voisin
                 {
@@ -123,7 +126,7 @@ public static class GenerateurTerrain
             }
         }
 
-        if (p.X < width -1) // DROITE
+        if (p.X < width - 1) // DROITE
         {
             if (!terrain[p.X + 1, p.Y].HasFlag(MurEtat.VISITE))
             {
@@ -155,6 +158,7 @@ public static class GenerateurTerrain
             }
         }
 
-        return terrain;
+        return AppliquerBacktracker(terrain, width, height);
     }
+   
 }

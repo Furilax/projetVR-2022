@@ -248,7 +248,7 @@ MonoBehaviour:
   width: 10
   height: 10
   size: 1
-  murPrefab: {fileID: 458662, guid: facf14ae9ce68b7479827bcf72fba835, type: 3}
+  murPrefab: {fileID: 7050975771847039572, guid: 7979400165743e04da303b6f082fa04f, type: 3}
 --- !u!4 &1058285437
 Transform:
   m_ObjectHideFlags: 0
