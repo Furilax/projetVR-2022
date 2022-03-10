@@ -28,6 +28,18 @@ public struct Voisin
 
 public static class GenerateurTerrain
 {
+    private static MurEtat TrouverMurOppose(MurEtat mur)
+    {
+        switch(mur)
+        {
+            case MurEtat.DROITE: return MurEtat.GAUCHE;
+            case MurEtat.GAUCHE: return MurEtat.DROITE;
+            case MurEtat.HAUT: return MurEtat.BAS;
+            case MurEtat.BAS: return MurEtat.HAUT;
+            default: return MurEtat.GAUCHE;
+        }
+    }
+
     private static MurEtat[,] AppliquerBacktracker(MurEtat[,] terrain, int width, int height)
     {
         // here we make changes
@@ -50,12 +62,12 @@ public static class GenerateurTerrain
                 var randIndex = rng.Next(0, voisins.Count);
                 var voisinHasard = voisins[randIndex];
 
-                var nPosition = randomNeighbour.Position;
-                maze[current.X, current.Y] &= ~randomNeighbour.SharedWall;
-                maze[nPosition.X, nPosition.Y] &= ~GetOppositeWall(randomNeighbour.SharedWall);
-                maze[nPosition.X, nPosition.Y] |= WallState.VISITED;
+                var vPosition = voisinHasard.Position;
+                terrain[current.X, current.Y] &= ~voisinHasard.MurPartage;
+                terrain[vPosition.X, vPosition.Y] &= ~GetOppositeWall(voisinHasard.MurPartage);
+                terrain[vPosition.X, vPosition.Y] |= MurEtat.VISITE;
 
-                positionStack.Push(nPosition);
+                positionStack.Push(vPosition);
             }
         }
 
