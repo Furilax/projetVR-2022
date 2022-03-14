@@ -541,7 +541,7 @@
                 {
                     "name": "",
                     "id": "49a23327-a116-48c0-8af9-0d2c50c15a88",
-                    "path": "<XRController>{LeftHand}/grip",
+                    "path": "<XRController>{LeftHand}/devicePosition/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
