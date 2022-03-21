@@ -16,6 +16,7 @@ public class Consumer : MonoBehaviour
 
         if (consumable != null)
         {
+            Debug.Log("Consu;ing food") ;
             consumable.Consume();
         }
     }
