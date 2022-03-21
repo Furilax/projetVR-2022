@@ -21,6 +21,9 @@ public class RenduTerrain : MonoBehaviour
     [SerializeField]
     private Transform solPrefab = null;
 
+    [SerializeField]
+    private Transform plafondPrefab = null;
+
     void Start()
     {
         var terrain = GenerateurTerrain.Generate(width, height);
@@ -31,6 +34,9 @@ public class RenduTerrain : MonoBehaviour
     {
         var sol = Instantiate(solPrefab, transform);
         sol.localScale = new Vector3(width, 1, height);
+
+        var plafond = Instantiate(plafondPrefab, transform);
+        plafond.localScale = new Vector3(width, 1, height);
 
         for (int i = 0; i < width; i++)
         {

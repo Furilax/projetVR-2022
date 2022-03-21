@@ -245,11 +245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7aa4e133330b304c863f951276cbb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
-  height: 10
+  width: 15
+  height: 15
   size: 1
-  murPrefab: {fileID: 7050975771847039572, guid: 7979400165743e04da303b6f082fa04f, type: 3}
+  murPrefab: {fileID: 1576766660618551623, guid: 741226f031191004e99961f63469df53, type: 3}
   solPrefab: {fileID: 591889887358176423, guid: fcccd2e94851e3e48abc27450b9b57bd, type: 3}
+  plafondPrefab: {fileID: 2165152061531579239, guid: b679964160108134b9ec7ff06b764796, type: 3}
 --- !u!4 &1058285437
 Transform:
   m_ObjectHideFlags: 0
