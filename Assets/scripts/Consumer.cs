@@ -3,12 +3,12 @@ using UnityEngine;
 public class Consumer : MonoBehaviour
 {
     Collider _collider;
+    [SerializeField]
     VieJoueur player;
     void Start()
     {
         _collider = GetComponent<Collider>();
         _collider.isTrigger = true;
-        player = GetComponentInParent<VieJoueur>();
     }
 
     private void OnTriggerEnter(Collider other)
