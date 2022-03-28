@@ -1225,6 +1225,7 @@ GameObject:
   - component: {fileID: 3641054773518186317}
   - component: {fileID: 9006541510524589512}
   - component: {fileID: 1757929645631675628}
+  - component: {fileID: 4427978593936557164}
   m_Layer: 0
   m_Name: monster
   m_TagString: Untagged
@@ -1324,6 +1325,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0b437812a4ae545aa5218e464b76e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_heal: 100
-  cur_heal: 100
+  max_heal: 200
+  cur_heal: 200
   isAlive: 1
+--- !u!114 &4427978593936557164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067130667269675161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c73128afd5c7a439a954c29c3bab03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageCollider: {fileID: 3641054773518186317}
+  nbDegat: 20

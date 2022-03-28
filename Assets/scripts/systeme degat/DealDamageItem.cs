@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class DealDamage : MonoBehaviour
+public class DealDamageItem : MonoBehaviour
 {
     //pour voir les variables dans l'inspector
     [SerializeField]
