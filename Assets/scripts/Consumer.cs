@@ -17,7 +17,6 @@ public class Consumer : MonoBehaviour
 
         if (consumable != null)
         {
-            Debug.Log("Consu;ing food") ;
             player.eat(consumable.drinkIncrease, consumable.eatIncrease);
             consumable.Consume();
         }

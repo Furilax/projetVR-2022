@@ -958,8 +958,8 @@ MonoBehaviour:
   hungerBar: {fileID: 17606677}
   maxThirst: 100
   maxHunger: 100
-  thirstDecreaseSpeed: 1
-  hungerDecreaseSpeed: 1
+  thirstDecreaseSpeed: 2
+  hungerDecreaseSpeed: 2
 --- !u!1001 &481044109
 PrefabInstance:
   m_ObjectHideFlags: 0

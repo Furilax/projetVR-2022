@@ -24,21 +24,26 @@ public class PlayerBehaviour : MonoBehaviour
         thirst = maxThirst;
     }
 
-    // Update is called once per frame
     void Update()
     {
         thirst -= Time.deltaTime * thirstDecreaseSpeed;
         hunger -= Time.deltaTime * hungerDecreaseSpeed;
-        Debug.Log("hunger: "+hunger);
         hungerBar.rectTransform.localScale = new Vector3(hunger / maxHunger, 1, 1);
         thirstBar.rectTransform.localScale = new Vector3(thirst / maxThirst, 1, 1);
+
+        hunger = Mathf.Clamp(hunger, 0, maxHunger);
+        thirst = Mathf.Clamp(thirst, 0, maxThirst);
+
+        if(hunger<=0 || thirst <= 0)
+        {
+            //Deathhhhhhhhhh
+            //isAlive = false
+        }
     }
 
     public void eat(int food, int drink)
     {
         hunger += food;
-        hunger = Mathf.Clamp(hunger, 0, maxHunger);
         thirst += drink;
-        thirst = Mathf.Clamp(thirst, 0, maxThirst);
     }
 }
