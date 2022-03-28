@@ -46,13 +46,11 @@ public class VieJoueur : MonoBehaviour
             cur_heal = 0;
             isDead();
         }
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            takeDamage(10);
-        }
+
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    takeDamage(10);
+        //}
     }
 
     public void takeDamage(int amount)
