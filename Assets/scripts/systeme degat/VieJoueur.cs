@@ -47,12 +47,20 @@ public class VieJoueur : MonoBehaviour
             isDead();
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            takeDamage(10);
+        }
+    }
 
     public void takeDamage(int amount)
     {
         if (isAlive)
         {
             cur_heal -= amount;
+            Debug.Log("prend un degat");
             isDead();
         }
     }
@@ -64,6 +72,8 @@ public class VieJoueur : MonoBehaviour
             isAlive = false;
             Debug.Log("le joueur est morte, y falais etre plus fort");
             gameObject.SetActive(false);
+            FindObjectOfType<GameManager>().EndGame();
+
         }
     }
 
